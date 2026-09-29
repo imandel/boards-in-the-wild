@@ -1,0 +1,543 @@
+{
+  "name": "camera-ready-compute-v2",
+  "expected_render_shards": 128,
+  "logged": {
+    "sam_gpu_hours": {
+      "value": 6.22,
+      "source": "ecad-corpus docs/PROGRESS.md 2026-07-14 \"Full corrected SAM 3.1 observations merged and validated\": aggregate elapsed GPU time including model load 6.22 h (Slurm job 863021, 79,144 photos)",
+      "kind": "measured (logged)"
+    },
+    "vlm_calls": {
+      "value": 79144,
+      "source": "experiments/photo_ranking/README.md and PROGRESS 2026-07-14: 79,144-row Gemini 3.1 Flash-Lite Batch observation table",
+      "kind": "measured"
+    },
+    "vlm_cost_usd": {
+      "value": 16.5347,
+      "source": "ecad-corpus docs/PROGRESS.md 2026-07-14 \"Full Gemini semantic observation run complete\": estimated final Batch cost $16.5347",
+      "kind": "estimated from token usage"
+    }
+  },
+  "inputs": {
+    "normalization_baseline_completion": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/normalization_baseline_v1/production_completion.json",
+      "sha256": "3c6264708338f92c74621aa2e21fabe931b28b6debd2c1ca3b36c853ea0e4c72"
+    },
+    "match_census_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-census-v1/summary.json",
+      "sha256": "5dde613573f100e06f04d3d67ab99c77f2a3dce493094a92f9583f47508a57df"
+    },
+    "render_shard_0000": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0000.json",
+      "sha256": "d2d76dfdcaedaeb05019fd323903a7242b45b10a16bab4979e066de386c03a8e"
+    },
+    "render_shard_0001": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0001.json",
+      "sha256": "659425701bb7ada3f1f0eb62f1e8a4520f4277e681f22444ca904a0bd0eb828c"
+    },
+    "render_shard_0002": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0002.json",
+      "sha256": "dac520786043c8d135690eb553ceb22d92f9edbbde17fe88bcfd7a562774208a"
+    },
+    "render_shard_0003": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0003.json",
+      "sha256": "8ae6ec109f60bf64bc887698d6ace531609bb92b802e852a439eb91a9efd7f46"
+    },
+    "render_shard_0004": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0004.json",
+      "sha256": "1fe9adeb9d264512e44f92fd3fe8fba0d35d67fd07dd213e1ce6c9697bf965c7"
+    },
+    "render_shard_0005": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0005.json",
+      "sha256": "9705c20ddfae34c58fe6d8ac313b6df7676543ed9b4256ab32ea9e3fbb9f290a"
+    },
+    "render_shard_0006": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0006.json",
+      "sha256": "2b4a18cff986a60d7c4f3ec66bd023cda85404dd8faf66a8efff5bbbb0b6570e"
+    },
+    "render_shard_0007": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0007.json",
+      "sha256": "9c976453fb5a0e9b51b3779a3723a9ec0840083fd096777a8e3ae4fb6f32f780"
+    },
+    "render_shard_0008": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0008.json",
+      "sha256": "b0b6ea08c66df38a5100334e110be423d1763099e49a2a366d7145b29f13d22e"
+    },
+    "render_shard_0009": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0009.json",
+      "sha256": "b8549f4c573817b48bebf26b8a5e91898a53b04f067a8af7306d43fe1e766e44"
+    },
+    "render_shard_0010": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0010.json",
+      "sha256": "060af198ccbc4de7df3de88d311a044783236469c07035ae716741fdf73bebdf"
+    },
+    "render_shard_0011": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0011.json",
+      "sha256": "b743b1f4d37627492bace943c8dba527fa769d996247154530e0508139729902"
+    },
+    "render_shard_0012": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0012.json",
+      "sha256": "6e14d303c372e73ebe5d57a082ea5d84d477ca22cd0d0401c564279035aa039f"
+    },
+    "render_shard_0013": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0013.json",
+      "sha256": "1cab7cc8cf4eebf5a191afce26affc7555331eaf15dc276c79820c195ea21a0f"
+    },
+    "render_shard_0014": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0014.json",
+      "sha256": "ac6b67d044f6b75c3d86ffac3d73e62d45365a6b6acf2cbf28516da54ad6b3eb"
+    },
+    "render_shard_0015": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0015.json",
+      "sha256": "0af17e76a3eeb79feeb6a59b3243cad0f7362fff38f4041a203e2b6bb19e9d85"
+    },
+    "render_shard_0016": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0016.json",
+      "sha256": "1d95edd2b51fadbbbf65d4ed659f0ba6495cf044acebefcf467708affa5c0f61"
+    },
+    "render_shard_0017": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0017.json",
+      "sha256": "f78ebf2df8d4153ee02688acdc1240607efc75b200b004531c12d08b14776ca4"
+    },
+    "render_shard_0018": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0018.json",
+      "sha256": "3f978ded96e2286bef7320888c92aacea38e8c9928a17ee893016ea29932d392"
+    },
+    "render_shard_0019": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0019.json",
+      "sha256": "6f333692fdd640b91799f58ee8ad79c0a22985e2b16108dc56133addcb2b0c75"
+    },
+    "render_shard_0020": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0020.json",
+      "sha256": "16960fe4befab0a4d09f355b122c9e17d8278d9ca9adc973b8fe1459438d336a"
+    },
+    "render_shard_0021": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0021.json",
+      "sha256": "7bbd8449f4e4ecbe940ee187b07b084faa15ba47145675b2fa6c500d1ee2d6c3"
+    },
+    "render_shard_0022": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0022.json",
+      "sha256": "feba3d46d9b7d3e38642f3c77c7a2b9c03a2847969cc80b72ab4d8329543196c"
+    },
+    "render_shard_0023": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0023.json",
+      "sha256": "0a04bc8187a1026a0c56a2a62f9f5ec258867e45c6bdd84d2789062a65004da8"
+    },
+    "render_shard_0024": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0024.json",
+      "sha256": "e526e20195b7229f463a28293f884191e2337a78d9ae72c14bdd6f05b3efb1bd"
+    },
+    "render_shard_0025": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0025.json",
+      "sha256": "b04774427e19f9ded22d45f9e435dbfda13042f4d85e5dab5a01a664eeea37df"
+    },
+    "render_shard_0026": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0026.json",
+      "sha256": "ecf41d5f618a8425f6327b3868111cd2f50bde497b6ac4d0272b41e487a6336f"
+    },
+    "render_shard_0027": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0027.json",
+      "sha256": "83d2d8da223be59f415edff4c826d5f9ee51e27a6b1ad3f6e3e18778b5af401e"
+    },
+    "render_shard_0028": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0028.json",
+      "sha256": "8edd4c1b6b112fac73d671eb689cd76ed1e0201daa86ecc9e3027b2d5a9cf103"
+    },
+    "render_shard_0029": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0029.json",
+      "sha256": "6330735ebbccfa0795b1c760d11a719810d63dc52dc2c44094d7f0e3a516a74a"
+    },
+    "render_shard_0030": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0030.json",
+      "sha256": "4ef5448375bc22de72d4fe749b0f5eae1069aadd603bfcec660baf4d05585b80"
+    },
+    "render_shard_0031": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0031.json",
+      "sha256": "edcb465a82cc43b7047bf2bc74ad7697c129e49ea9a27d0efe0f0c9504eecc96"
+    },
+    "render_shard_0032": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0032.json",
+      "sha256": "3d8eb27c5d4651165d62caeec41a94c9f5688a8fb722cf7e58da9f331b19134d"
+    },
+    "render_shard_0033": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0033.json",
+      "sha256": "c0300cae40f9d81d2d2c4b5636517eb646a63f111b53af810e5aae6b44afd078"
+    },
+    "render_shard_0034": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0034.json",
+      "sha256": "12fb8801351dd3298271ea38e299f9d602306df40f5349dfc4ed72f6d81a1067"
+    },
+    "render_shard_0035": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0035.json",
+      "sha256": "32945c57d6f0d83b9965f866681cc575e01814e63bfd9cde4c9d00d358dbf8d3"
+    },
+    "render_shard_0036": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0036.json",
+      "sha256": "5da563f02e2c0f558de9a5da5568b2b513b58b57261fb20d4269664592eebe6a"
+    },
+    "render_shard_0037": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0037.json",
+      "sha256": "69002dac6f96032deda9336d9142ca4f450e80e1773fe51217be265e34fc3dcb"
+    },
+    "render_shard_0038": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0038.json",
+      "sha256": "14ea633437e3cb87fe70385ac75fcccf11bc980a2a99a59d502dd61a620a33f5"
+    },
+    "render_shard_0039": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0039.json",
+      "sha256": "9816d7abb288c36d805888910e6e4066ba997bdbd67f58b7c2d73a08b586345f"
+    },
+    "render_shard_0040": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0040.json",
+      "sha256": "09131cf97b0364136d447b7b13135879acc1517f78f091839a9cac339538fc89"
+    },
+    "render_shard_0041": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0041.json",
+      "sha256": "26d43dde2192ea73602a4f8eef719143167ce58f19ae822cfee5ea6e4c827216"
+    },
+    "render_shard_0042": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0042.json",
+      "sha256": "64306b1143813c2450a91baacd41148a24cf8fd5e0b184435c0efbbda3c54e53"
+    },
+    "render_shard_0043": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0043.json",
+      "sha256": "2f2714d68f0351e4c900a904b202b55ee368af651e01c6677a5f81b32193ab27"
+    },
+    "render_shard_0044": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0044.json",
+      "sha256": "71dfefda80fa9d447596582080c579754fe9360cbd11cddea56e35a2f29c624b"
+    },
+    "render_shard_0045": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0045.json",
+      "sha256": "243831938c821ff42b70b3044ac832d38251cd566704a26e909a84a5ee7a02b2"
+    },
+    "render_shard_0046": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0046.json",
+      "sha256": "76e5c5b3c5b426c83684bd88f521d4e9480b4b0842bae011c89d50ae4523a345"
+    },
+    "render_shard_0047": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0047.json",
+      "sha256": "4f6b256e7f8cf4d271ab285a88a7281016eedf1e64352bc69434a3722770dc33"
+    },
+    "render_shard_0048": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0048.json",
+      "sha256": "78b1563408fa90ba6dd0d2686d090a243c649605d2bca097876a912a1b9c8362"
+    },
+    "render_shard_0049": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0049.json",
+      "sha256": "820519d8477f1c9b9711bc9ddbf2651a002497e021712bdaa96048f51913095f"
+    },
+    "render_shard_0050": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0050.json",
+      "sha256": "a028ff804769b4a2f930cdcde17457c24377dd9804ec5d57c6f9691d70db8808"
+    },
+    "render_shard_0051": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0051.json",
+      "sha256": "b99563d0801a068f3767a2ebf1dceedcd2a3992c132478174c3d3a44e056b845"
+    },
+    "render_shard_0052": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0052.json",
+      "sha256": "b137f1c63d6ca9fdef21fd25a0f7e312028cff966310fc50958832515c026969"
+    },
+    "render_shard_0053": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0053.json",
+      "sha256": "7d3d83c0cca31ad053512b89c035a709389cd7e761638dec0cb93d74b1c2386c"
+    },
+    "render_shard_0054": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0054.json",
+      "sha256": "60da3b5605b479fee7909dce63731f106d7f004d5698d81e017d08002553f345"
+    },
+    "render_shard_0055": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0055.json",
+      "sha256": "a8c5c75b334f1fcf7409953083798794f378a04c966a337f4305afab98426dfe"
+    },
+    "render_shard_0056": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0056.json",
+      "sha256": "4b3e1350393b62bf47fea3d56f1a22598918eb085a3c9cee21b9ce9929b8cb26"
+    },
+    "render_shard_0057": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0057.json",
+      "sha256": "03dd5b83f9151c987ce3652bdac62b885ff887549def2c40d33971966da308b9"
+    },
+    "render_shard_0058": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0058.json",
+      "sha256": "240d3f9c99016c5b8adbded8765e4ec0dc02cdddd7bfbedc844db372ce8b76d8"
+    },
+    "render_shard_0059": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0059.json",
+      "sha256": "58da2a938e5a63e9bfeefc82f273d36bf9255f525cec7094ce709ac3a1e10c89"
+    },
+    "render_shard_0060": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0060.json",
+      "sha256": "749f2f69dd2bdfee1eb815d08b424750ae086308b5ab58f4b25c9ab4f8e0d5c8"
+    },
+    "render_shard_0061": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0061.json",
+      "sha256": "1d98dd72edf3fabdcda778d868caf1a681418a59f3ea367edd3cc5f01c27af1d"
+    },
+    "render_shard_0062": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0062.json",
+      "sha256": "162de08ca02c3626edc251d866b281dea4adce6a65bee5de5a989e6a46b9335f"
+    },
+    "render_shard_0063": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0063.json",
+      "sha256": "fc8d5fbf2b46abbf73e7afe9d6e0f19ab6523e14f15993b9c16c32f474451de6"
+    },
+    "render_shard_0064": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0064.json",
+      "sha256": "52bdfa19ec4d3ef5eb3df89e3c8a35b65a96329aeab9e036db430f2ef0b76872"
+    },
+    "render_shard_0065": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0065.json",
+      "sha256": "74d564f9508a1b1c7601695217b3f539e40d229f074b059446d2d6ed3af1308d"
+    },
+    "render_shard_0066": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0066.json",
+      "sha256": "deed7224b32a45e97d930595f2b2844bb0804be5b3ff67344db3ca4b00079213"
+    },
+    "render_shard_0067": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0067.json",
+      "sha256": "e3019ececc082abb32458a9f5a82ea5983c0463f7abd1724e3ab2b613d4e7a48"
+    },
+    "render_shard_0068": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0068.json",
+      "sha256": "56d8e3183ade715e4e4eb9d9d5d5ec9fe6dbc3d6eb9fe2903b637a4f094b7c99"
+    },
+    "render_shard_0069": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0069.json",
+      "sha256": "eb677cedc22a5c2df5c36159e7abf44a57d95242e3d5743b125d954c47de2a11"
+    },
+    "render_shard_0070": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0070.json",
+      "sha256": "4c15072ba7eeb46e27457c1821a20198acb6630a04ee56f3befc5131595f9064"
+    },
+    "render_shard_0071": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0071.json",
+      "sha256": "af27b9ea284107acaff9f3d9322449889fa9cad717f74093313893f7a0c6a16d"
+    },
+    "render_shard_0072": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0072.json",
+      "sha256": "fc780e2316b3a57eae506006eeb451c6c7834cd8cd0afad9fb6de6b26d83080a"
+    },
+    "render_shard_0073": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0073.json",
+      "sha256": "8bc7cbbb270bc397a397a9c9c557636a0a24baf3f0bcdc3f8443101390efc855"
+    },
+    "render_shard_0074": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0074.json",
+      "sha256": "8995b786c954b1c1fe92f5ee36e1e0c0fb3b32232992e74d55b216a68d546c33"
+    },
+    "render_shard_0075": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0075.json",
+      "sha256": "20cc24459a0c30e222bfd6d02fc017e82b716a2f120594bcef031a925efa328f"
+    },
+    "render_shard_0076": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0076.json",
+      "sha256": "7582a889af220a66a47440e14e1d3d399702329183896712c892f47248df8c59"
+    },
+    "render_shard_0077": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0077.json",
+      "sha256": "67d8419c0769a6032096a35378af6eec8490a3eba2f832e64bb68bfd757fab6b"
+    },
+    "render_shard_0078": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0078.json",
+      "sha256": "a50a23d8f34a345cd26d9053192a69c01ccfa0c16bd535426e808d699f9951b2"
+    },
+    "render_shard_0079": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0079.json",
+      "sha256": "332a50a36aca8af1b5b1a4d32787380670ee26e7480fa964b7ca282344671bd7"
+    },
+    "render_shard_0080": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0080.json",
+      "sha256": "4e300b7a834b0e08afd8840d4bfcf17db8bb6a68f5dbc0ddb70d25488f90db17"
+    },
+    "render_shard_0081": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0081.json",
+      "sha256": "b68f1229b048c2a362f26603f0775bc87399c9860a1e9e541f9ce940026e4136"
+    },
+    "render_shard_0082": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0082.json",
+      "sha256": "6589484bf7da43dea080cb473615f3a79cab67078f45c99a73bda5a5dfa50b81"
+    },
+    "render_shard_0083": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0083.json",
+      "sha256": "ce5a167aa6d1a4b4a61b3082bf1652435bb7feb4e2ac4c6d1c00fa3916d27190"
+    },
+    "render_shard_0084": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0084.json",
+      "sha256": "07959353364cc8525ed4640d896f562ccd08480a85af7b6210fc53be7d1a8cfe"
+    },
+    "render_shard_0085": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0085.json",
+      "sha256": "134280f10e76d82c11a93c38125b2d0c3d55f0e095db4f10a5c4f26350b3b304"
+    },
+    "render_shard_0086": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0086.json",
+      "sha256": "a542171f5f42272065af1d10946ebed48a27c43780d4150409466b8eb066c62d"
+    },
+    "render_shard_0087": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0087.json",
+      "sha256": "222125e74ec6692beb3e8ab409434544b7a3d29429eab31bab14a5867c004654"
+    },
+    "render_shard_0088": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0088.json",
+      "sha256": "083cf882c5b7b2c79616710ac9798df51bcd15ebd5e3b3b012fb576be8e15eae"
+    },
+    "render_shard_0089": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0089.json",
+      "sha256": "d0fdce8038f03fff16eaa2218a9aa9cea874a8514a2ab607a6beee943f9fe8af"
+    },
+    "render_shard_0090": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0090.json",
+      "sha256": "a8c9c3292e62b6a89f1e6acb72219d7abcb9b800f40e0d777034f8c870426485"
+    },
+    "render_shard_0091": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0091.json",
+      "sha256": "335c8fc2ecca3fd8c57694b16d46830f421ee512c18543a8ef448c5da8ca8c30"
+    },
+    "render_shard_0092": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0092.json",
+      "sha256": "0c1f5bec459b24e958c2d9ac488b58b42d7437917ae6932c10499a1e4a43ad88"
+    },
+    "render_shard_0093": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0093.json",
+      "sha256": "487b78d22203039de4eb646e43296a83de44832e8970d7e78ed89247bd679d20"
+    },
+    "render_shard_0094": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0094.json",
+      "sha256": "dbca768de28123963b2e972ab902423349f07553804ee302c15ed618ee0f82c0"
+    },
+    "render_shard_0095": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0095.json",
+      "sha256": "129393193f5dc5b46151e1e6e2168e01aa65055e6e9676e43fa6eeef3b0b3ba1"
+    },
+    "render_shard_0096": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0096.json",
+      "sha256": "d7a3cdcababcaa7b5829d3891819e9eb4d5bbd5fb4c1f54aea5a0e59e5ebbe98"
+    },
+    "render_shard_0097": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0097.json",
+      "sha256": "4d20a894d0150084bdcf8877502dfb91ae9c4aa55caf79fd52c065828d109a95"
+    },
+    "render_shard_0098": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0098.json",
+      "sha256": "754ca1dc42a314b03ba12cc02b72371e00f4be580fe6c37dbf0bcb6a23f402f6"
+    },
+    "render_shard_0099": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0099.json",
+      "sha256": "8569fb49e0c365573c1d88befc3403e9712bd38b2d823049d747f6f74e9e0474"
+    },
+    "render_shard_0100": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0100.json",
+      "sha256": "b1bae8b728dff76cfe1cad40d41c25900a905e19eb4cc29af1bd005cae591278"
+    },
+    "render_shard_0101": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0101.json",
+      "sha256": "971436bdaef6916e71870d4c55818301054aa89eca3e747cc6ab929326a15ae8"
+    },
+    "render_shard_0102": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0102.json",
+      "sha256": "1c04e8c196c98c617685611453a490d3fd8e14cff9d31691739067ae3049c185"
+    },
+    "render_shard_0103": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0103.json",
+      "sha256": "f72670689532f79a31ae507de56290f264a2709aefc396386c8c46e31c55ee23"
+    },
+    "render_shard_0104": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0104.json",
+      "sha256": "ba3056a91e9e9e1795754505f98687dfd00f21cdf0cc041bef378de83f8dd02c"
+    },
+    "render_shard_0105": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0105.json",
+      "sha256": "8c854f8dce6c4bb6a86548682ed6d830f13f89373cf8b345e6e3d25c3a4e2b44"
+    },
+    "render_shard_0106": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0106.json",
+      "sha256": "ca6cbc17d469490bb24c3465e05f0dfb212b82603b697336324027985cd4e9dc"
+    },
+    "render_shard_0107": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0107.json",
+      "sha256": "c4205386542b9731f078a617ae349bc0dfdb0c9e7e542de7f01620eb0b7dbd5e"
+    },
+    "render_shard_0108": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0108.json",
+      "sha256": "4451836a403e3963dff952fccf864c3a1c594f8a510541ba80a7214e318a86a8"
+    },
+    "render_shard_0109": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0109.json",
+      "sha256": "c7f15e415ef6bab396d31828465f16c4930a28c048420510b24a14b10023fd2c"
+    },
+    "render_shard_0110": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0110.json",
+      "sha256": "e9c2fc02ab9872dce6ed59449bcdb6c00ec28c4c3f06eb344fe6e10eb8dc9884"
+    },
+    "render_shard_0111": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0111.json",
+      "sha256": "2d520e280cc51eabdb6928f04c5eba9bd020defb246e7e984ddab9062a707614"
+    },
+    "render_shard_0112": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0112.json",
+      "sha256": "cb0f7714fcd92785cfecda12120070eef2af8b559da7e1ccd05e1a3b19dc9968"
+    },
+    "render_shard_0113": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0113.json",
+      "sha256": "88174d5794c1058f6a8833029997e98948e3a1a887848c7e48dcc0ccd472c9fb"
+    },
+    "render_shard_0114": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0114.json",
+      "sha256": "ddc3a98276eeefd4ac0c76cd65b0c0bd6763ff3a213a801e9619d903474d6550"
+    },
+    "render_shard_0115": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0115.json",
+      "sha256": "d6005e4ddcfa5b1cfa90f136b88d102e8cf57a4c47584ff469b49842b2ccb89d"
+    },
+    "render_shard_0116": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0116.json",
+      "sha256": "32bfa50f94af304df29d799283141af6fe64300716eac5d626225eb6608c7e3b"
+    },
+    "render_shard_0117": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0117.json",
+      "sha256": "648a9647059cb36964cd3be0b2440f1cfc005a9d6074e5476ba7d77048fba274"
+    },
+    "render_shard_0118": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0118.json",
+      "sha256": "58ad99308f1b387d95667800bcfba2e8021f7b15458bc8dea67c6778d47f0d7d"
+    },
+    "render_shard_0119": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0119.json",
+      "sha256": "35ca6fe1d8db91c4c77366aab8c64b9f9035f216ae6a4cebad9cb253fec52a1f"
+    },
+    "render_shard_0120": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0120.json",
+      "sha256": "a78c31031d569ef49128bc8953e9210cac6cdcf971b739003da7ecc4b05a14be"
+    },
+    "render_shard_0121": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0121.json",
+      "sha256": "76759664bdbd510f6ff3e116e44936eb062f813585abc135661d9c295c743fa4"
+    },
+    "render_shard_0122": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0122.json",
+      "sha256": "94c6f06faff896db02262ec25fef4283c412220c1338ed618e374f19654183b9"
+    },
+    "render_shard_0123": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0123.json",
+      "sha256": "cdc9d410366461de94f104e53c33054b664873961692544fbb9bf1d7c3a7c5e6"
+    },
+    "render_shard_0124": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0124.json",
+      "sha256": "171e843ecee113007930e5487e7621d9e8fcc05d49ab99da56966d6431d45ccb"
+    },
+    "render_shard_0125": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0125.json",
+      "sha256": "4c03ee8fd718de2a29e414af89278af4111b1a6971ef2f7d8cb72e0d478606a7"
+    },
+    "render_shard_0126": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0126.json",
+      "sha256": "aa0148552fd7ed67f794fa6fe2e7b93c659cca70623c9618c824522ab800eb33"
+    },
+    "render_shard_0127": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/render_shards_v1/summary_0127.json",
+      "sha256": "54dfae76ec085453d0d46322bdc94468bdba70f6c7dc9e9bcb12170674d8f1c9"
+    }
+  }
+}

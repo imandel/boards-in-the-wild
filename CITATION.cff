@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite the paper."
+title: "Boards in the Wild"
+authors:
+  - family-names: Mandel
+    given-names: Ilan
+    orcid: "https://orcid.org/0000-0002-8569-5176"
+  - family-names: Castillo
+    given-names: Joey
+    orcid: "https://orcid.org/0009-0009-5459-0345"
+  - family-names: Ju
+    given-names: Wendy
+    orcid: "https://orcid.org/0000-0002-3119-611X"
+  - family-names: Roumen
+    given-names: Thijs
+    orcid: "https://orcid.org/0000-0003-2042-6597"
+preferred-citation:
+  type: conference-paper
+  title: "Boards in the Wild"
+  authors:
+    - family-names: Mandel
+      given-names: Ilan
+    - family-names: Castillo
+      given-names: Joey
+    - family-names: Ju
+      given-names: Wendy
+    - family-names: Roumen
+      given-names: Thijs
+  collection-title: "Proceedings of the 11th ACM Symposium on Computational Fabrication (SCF '26)"
+  publisher:
+    name: ACM
+  year: 2026
+  doi: "10.1145/3828611.3845653"

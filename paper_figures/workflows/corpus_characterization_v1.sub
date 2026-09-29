@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=ecad-paper-figures
+#SBATCH --partition=default_partition
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
+#SBATCH --time=08:00:00
+#SBATCH --constraint=avx2
+#SBATCH --requeue
+
+set -euo pipefail
+
+REPO_ROOT=${ECAD_REPO_ROOT:?set ECAD_REPO_ROOT to the ecad-corpus checkout}
+DATA_ROOT=${ECAD_DATA_ROOT:?set ECAD_DATA_ROOT to the ecad-corpus data root}
+FIGURE_PROJECT="$REPO_ROOT/experiments/paper_figures"
+export UV_PROJECT_ENVIRONMENT=${ECAD_FIGURE_ENV:?set ECAD_FIGURE_ENV outside the checkout}
+export MPLCONFIGDIR=${MPLCONFIGDIR:-"$TMPDIR/matplotlib"}
+mkdir -p "$MPLCONFIGDIR" "$DATA_ROOT/runs/paper_figures_v1/logs" "$DATA_ROOT/runs/paper_figures_v1/work"
+
+uv run --project "$FIGURE_PROJECT" --frozen ecad-paper-figures build \
+  --release-root "$DATA_ROOT/releases/ecad-corpus-pre-coco-stage7-v1" \
+  --normalization-dir "$DATA_ROOT/runs/normalization_v2" \
+  --paper-evaluation-dir "$DATA_ROOT/runs/unified_match_pipeline_v1/stage7_paper_evaluation_v1" \
+  --config "$FIGURE_PROJECT/configs/corpus_characterization_v1.json" \
+  --normalized-runtime-root "$DATA_ROOT" \
+  --render-runtime-root "$DATA_ROOT" \
+  --measurement-cache "$DATA_ROOT/runs/paper_figures_v1/work/corpus_characterization_pre_coco_v1.measurements.jsonl" \
+  --output "$DATA_ROOT/runs/paper_figures_v1/corpus_characterization_accepted_relations_v2" \
+  --workers "${SLURM_CPUS_PER_TASK:-16}"

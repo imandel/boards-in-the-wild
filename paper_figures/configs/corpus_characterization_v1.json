@@ -1,0 +1,71 @@
+{
+  "schema_version": "ecad-paper-corpus-characterization-config/v1",
+  "source_groups": {
+    "named_prefixes": {
+      "adafruit": "Adafruit",
+      "microchip": "Microchip",
+      "microchiptech": "Microchip",
+      "mps": "MPS",
+      "seeed": "Seeed",
+      "sparkfun": "SparkFun",
+      "sparkfunx": "SparkFun",
+      "ti": "TI"
+    },
+    "community_prefixes": [
+      "buspirate",
+      "hackaday",
+      "hackclub",
+      "misc_github",
+      "ohwr",
+      "pixhawk"
+    ],
+    "oshwa_logical_root_id": "legacy_oshwa",
+    "oshwa_fallback": "OSHWA registry — other",
+    "community_fallback": "Non-OSHWA GitHub / community",
+    "vendor_fallback": "Other vendor corpora",
+    "multiple": "Multiple source groups",
+    "unknown": "Unknown source"
+  },
+  "format_groups": {
+    "detected_formats": {
+      "allegro_or_binary_brd": "Allegro",
+      "altium_pcbdoc": "Altium",
+      "eagle_xml": "Eagle",
+      "kicad_legacy_brd": "KiCad",
+      "kicad_native": "KiCad"
+    },
+    "implementation_contains": {
+      "allegro": "Allegro",
+      "altium": "Altium",
+      "eagle": "Eagle"
+    },
+    "multiple": "Multiple formats",
+    "unknown": "Unknown / other"
+  },
+  "accepted_relation_policy": {
+    "policy_id": "primary-single-populated-delta002-singleton/v1",
+    "predicted_route": "PRIMARY",
+    "expected_counts": {
+      "relations": 4319,
+      "spatial_clusters": 4319,
+      "photo_locations": 4317,
+      "normalized_objects": 3551
+    }
+  },
+  "categories": {
+    "component_bins": [0, 10, 25, 50, 100, 200, 400],
+    "area_bins_mm2": [250, 500, 1000, 2500, 5000, 10000, 25000],
+    "passive_package_sizes": [
+      "01005",
+      "0201",
+      "0402",
+      "0603",
+      "0805",
+      "1206",
+      "1210",
+      "1812",
+      "2010",
+      "2512"
+    ]
+  }
+}

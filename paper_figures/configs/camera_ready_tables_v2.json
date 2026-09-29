@@ -1,0 +1,56 @@
+{
+  "name": "camera-ready-tables-v2",
+  "accepted_set": "paper-accepted-mappings/v2 (receipt fingerprint 23bd0f74cb0030cdba905768f6daf06bf6ea29e5b061586ab81734f79447c190)",
+  "expected_totals": {
+    "sources": 25,
+    "source_records": 59458,
+    "normalized_objects": 14024,
+    "accepted_mappings": 4697
+  },
+  "inputs": {
+    "sources": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/source_metadata/sources.parquet",
+      "sha256": "68b335c31b86c4365da8e27fec0b34257290e7c9012a2c1fe8716dacdf96e813"
+    },
+    "source_records": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/source_metadata/source_records.parquet",
+      "sha256": "0b7f75e77788ba6183ec6bbaafdf370b638f8c32b5ef3af0848053905bb016c7"
+    },
+    "source_record_relations": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/source_metadata/source_record_relations.parquet",
+      "sha256": "19e4388b7fa6b602b7e22731bf21674aa4dcd27dad2ddbdcc2cb3b8912aca856"
+    },
+    "objects": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/subject_snapshot_v2/objects.parquet",
+      "sha256": "467498d5f919fe160715e408535180b825c11d5b38771b0fbefddf5416a54e85"
+    },
+    "accepted_mappings": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/stage7_accepted_mappings_v2/accepted_mappings.parquet",
+      "sha256": "10100de50fa5b280267146a87c71ac6a8cf98066406ebe7addeb1dc92847d377"
+    },
+    "accepted_mappings_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/stage7_accepted_mappings_v2/summary.json",
+      "sha256": "6c053ea9c57cce8fe4991be5acd229da222462bc79bf5815ed30fcfcd69d695e"
+    },
+    "design_metrics": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/paper_figures_v1/corpus_characterization_accepted_relations_v2/design_metrics.parquet",
+      "sha256": "46b554f7e561328dcd86c0ec5910dbc68d0f9e1f6943d394b03e6c71bb9a02dc"
+    },
+    "subject_outcomes": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/downstream_analysis_v1/subject_outcomes.parquet",
+      "sha256": "dda126e6bfddb5ebe438fb7f75b51cc0f74568035baaadef26dc0d48050ba062"
+    },
+    "candidate_plan_subjects": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/photo_candidate_plan_v3/candidate_plan_subjects.parquet",
+      "sha256": "9d8138ff84cf9c9974069de38e037e4b92a1751e3c7a9f3c977fa6ff31ad8d1c"
+    },
+    "stage7_candidates": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/downstream_analysis_v1/stage7_candidates.parquet",
+      "sha256": "bf51c1309b88d3a718cad3691b2908179e89f9cfd06f081826a81caf9f16bfab"
+    },
+    "render_bank_renders": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/render_bank_v1/renders.parquet",
+      "sha256": "625ef3eccc9550a997dbef5660a9bf01316e1c606704277ad71cba9ed906759f"
+    }
+  }
+}

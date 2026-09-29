@@ -1,0 +1,47 @@
+{
+  "name": "camera-ready-prisma-v2",
+  "expected_catalog_candidates": 22774,
+  "notes": "v2 frozen receipts. Degraded-storage receipts staged in paper-cr-inputs-v1; pipeline receipts are the manifest-bound copies in match-expand-v3-frozen-inputs-v1.",
+  "inputs": {
+    "normalization_baseline_completion": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/normalization_baseline_v1/production_completion.json",
+      "sha256": "3c6264708338f92c74621aa2e21fabe931b28b6debd2c1ca3b36c853ea0e4c72"
+    },
+    "normalization_v2_summary": {
+      "path": "$ECAD_RUNS/paper-cr-inputs-v1/normalization_v2/summary.json",
+      "sha256": "bf43f86ad0f8b2e303e23f5a66f1c255d977257ff2eca44d891ce396b5c74128"
+    },
+    "subject_snapshot_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/subject_snapshot_v2/summary.json",
+      "sha256": "1bc91c092a7fddefbe69985c7640a246e5a6f37320226abb3f43437585af35e1"
+    },
+    "render_bank_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/render_bank_v1/summary.json",
+      "sha256": "bb749f3f80a193642e455306aa7cba6df8d19520a147ca200b87a2b3318b876d"
+    },
+    "photo_candidate_plan_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/photo_candidate_plan_v3/summary.json",
+      "sha256": "91ebfb23246aaa84f584eb2e75606a96773c4e5f0c94db0a5dfbba34bf23fdb4"
+    },
+    "pair_manifest_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/pair_manifest_v1/summary.json",
+      "sha256": "9f12dbb0b3cf23fbdd6cb041f7032599106b8ab75a6d8e7bde370e701bcb2320"
+    },
+    "match_census_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-census-v1/summary.json",
+      "sha256": "5dde613573f100e06f04d3d67ab99c77f2a3dce493094a92f9583f47508a57df"
+    },
+    "downstream_analysis_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/downstream_analysis_v1/summary.json",
+      "sha256": "b96932357fe782970eaad0e6e8bbeb3959b8684674e9cccd37a85ce7911467e9"
+    },
+    "stage7_freeze_plan_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/stage7_pre_coco_freeze_plan_v1/summary.json",
+      "sha256": "59ff6278d29d07d1c101ed136dba6193695a6ac98bb5714f3e9ddba3c93987a0"
+    },
+    "accepted_mappings_summary": {
+      "path": "$ECAD_RUNS/match-expand-v3-frozen-inputs-v1/unified_match_pipeline_v1/stage7_accepted_mappings_v2/summary.json",
+      "sha256": "6c053ea9c57cce8fe4991be5acd229da222462bc79bf5815ed30fcfcd69d695e"
+    }
+  }
+}

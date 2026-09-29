@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "boards-in-the-wild"
+version = "1.0.0"
+description = "Loaders, rehydration and examples for the Boards in the Wild dataset"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+dependencies = [
+    "pyarrow>=15",
+    "numpy>=1.26",
+    "huggingface_hub>=0.25",
+]
+
+[project.optional-dependencies]
+examples = ["opencv-python-headless>=4.9", "pandas>=2.0"]
+
+[dependency-groups]
+dev = ["ruff>=0.12", "pytest>=8", "pandas>=2.0", "opencv-python-headless>=4.9"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/boards_in_the_wild"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
